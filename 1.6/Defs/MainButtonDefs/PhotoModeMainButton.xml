@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <MainButtonDef>
+    <defName>PhotoMode</defName>
+    <label>photo mode</label>
+    <description>Enter Photo Mode to compose and capture a screenshot.</description>
+    <workerClass>Photo_Mode.MainButtonWorker_PhotoMode</workerClass>
+    <iconPath>PhotoMode/camera</iconPath>
+    <order>72</order>
+    <minimized>true</minimized>
+  </MainButtonDef>
+
+</Defs>

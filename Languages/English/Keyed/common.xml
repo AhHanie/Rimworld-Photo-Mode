@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <PhotoMode.LoadingLabel>Photo Mode Loading</PhotoMode.LoadingLabel>
+    <PhotoMode.SettingsTitle>Photo Mode</PhotoMode.SettingsTitle>
+
+    <PhotoMode.PanelTitle>Photo Mode</PhotoMode.PanelTitle>
+    <PhotoMode.HidePanel>Hide</PhotoMode.HidePanel>
+    <PhotoMode.ShowPanel>Show</PhotoMode.ShowPanel>
+    <PhotoMode.CleanScreenshot>Clean Screenshot</PhotoMode.CleanScreenshot>
+    <PhotoMode.HoldPreviewBypass>Hold to preview without image effects (or hold {0})</PhotoMode.HoldPreviewBypass>
+    <PhotoMode.ShowDevToolbar>Show debug toolbar (Dev Mode)</PhotoMode.ShowDevToolbar>
+
+    <PhotoMode.Section.Camera>Camera</PhotoMode.Section.Camera>
+    <PhotoMode.Camera.Speed>Movement speed: {0}x</PhotoMode.Camera.Speed>
+    <PhotoMode.Camera.SmoothMovement>Smooth movement</PhotoMode.Camera.SmoothMovement>
+    <PhotoMode.Camera.Zoom>Zoom: {0}</PhotoMode.Camera.Zoom>
+    <PhotoMode.Camera.Reset>Reset camera</PhotoMode.Camera.Reset>
+    <PhotoMode.Section.Overlay>Visibility</PhotoMode.Section.Overlay>
+    <PhotoMode.Overlay.CleanBaseline>Use clean baseline</PhotoMode.Overlay.CleanBaseline>
+    <PhotoMode.Overlay.HideNameplates>Hide nameplates</PhotoMode.Overlay.HideNameplates>
+    <PhotoMode.Overlay.HideColonistBar>Hide colonist bar</PhotoMode.Overlay.HideColonistBar>
+    <PhotoMode.Overlay.HideSelectionBrackets>Hide selection brackets</PhotoMode.Overlay.HideSelectionBrackets>
+    <PhotoMode.Overlay.HideDesignationOverlays>Hide designation overlays</PhotoMode.Overlay.HideDesignationOverlays>
+    <PhotoMode.Overlay.HideTargetingIndicators>Hide targeting indicators</PhotoMode.Overlay.HideTargetingIndicators>
+    <PhotoMode.Overlay.HideInteractionBubbles>Hide interaction bubbles</PhotoMode.Overlay.HideInteractionBubbles>
+    <PhotoMode.Overlay.HideMotes>Hide motes/text notifications</PhotoMode.Overlay.HideMotes>
+    <PhotoMode.Overlay.HideForbiddenDesignator>Hide forbidden designator</PhotoMode.Overlay.HideForbiddenDesignator>
+    <PhotoMode.Section.Scene>Scene</PhotoMode.Section.Scene>
+    <PhotoMode.Scene.Time>Time: {0}h</PhotoMode.Scene.Time>
+    <PhotoMode.Scene.UseCurrentTime>Use Current Time</PhotoMode.Scene.UseCurrentTime>
+    <PhotoMode.Scene.UsingRealTime>Using real map time</PhotoMode.Scene.UsingRealTime>
+    <PhotoMode.Scene.UsingVisualTime>Using visual time override</PhotoMode.Scene.UsingVisualTime>
+    <PhotoMode.Scene.Preset.Dawn>Dawn</PhotoMode.Scene.Preset.Dawn>
+    <PhotoMode.Scene.Preset.Morning>Morning</PhotoMode.Scene.Preset.Morning>
+    <PhotoMode.Scene.Preset.Noon>Noon</PhotoMode.Scene.Preset.Noon>
+    <PhotoMode.Scene.Preset.Afternoon>Afternoon</PhotoMode.Scene.Preset.Afternoon>
+    <PhotoMode.Scene.Preset.GoldenHour>Golden Hour</PhotoMode.Scene.Preset.GoldenHour>
+    <PhotoMode.Scene.Preset.Sunset>Sunset</PhotoMode.Scene.Preset.Sunset>
+    <PhotoMode.Scene.Preset.Dusk>Dusk</PhotoMode.Scene.Preset.Dusk>
+    <PhotoMode.Scene.Preset.Midnight>Midnight</PhotoMode.Scene.Preset.Midnight>
+    <PhotoMode.Scene.Weather>Weather: {0}</PhotoMode.Scene.Weather>
+    <PhotoMode.Scene.UseCurrentWeather>Use Current Weather</PhotoMode.Scene.UseCurrentWeather>
+    <PhotoMode.Scene.UsingRealWeather>Using real map weather</PhotoMode.Scene.UsingRealWeather>
+    <PhotoMode.Scene.UsingVisualWeather>Using visual weather override</PhotoMode.Scene.UsingVisualWeather>
+    <PhotoMode.Scene.Weather.Particles>Enable weather particles</PhotoMode.Scene.Weather.Particles>
+    <PhotoMode.Scene.Weather.Intensity>Intensity: {0}</PhotoMode.Scene.Weather.Intensity>
+    <PhotoMode.Scene.Weather.Status.NoOverlay>No overlay for this weather (sky only)</PhotoMode.Scene.Weather.Status.NoOverlay>
+    <PhotoMode.Scene.Weather.Status.FullySupported>Full particle support</PhotoMode.Scene.Weather.Status.FullySupported>
+    <PhotoMode.Scene.Weather.Status.PartiallySupported>Partial particle support (some effects sky-only)</PhotoMode.Scene.Weather.Status.PartiallySupported>
+    <PhotoMode.Scene.Weather.Status.Unsupported>Unsupported effect (sky only)</PhotoMode.Scene.Weather.Status.Unsupported>
+    <PhotoMode.Section.Pawns>Pawns</PhotoMode.Section.Pawns>
+    <PhotoMode.Pawns.ClickHint>Click a pawn on the map to select it. Shift-click to multi-select.</PhotoMode.Pawns.ClickHint>
+    <PhotoMode.Pawns.Previous>Previous</PhotoMode.Pawns.Previous>
+    <PhotoMode.Pawns.Next>Next</PhotoMode.Pawns.Next>
+    <PhotoMode.Pawns.NoneSelected>No pawns selected.</PhotoMode.Pawns.NoneSelected>
+    <PhotoMode.Pawns.Deselect>Deselect</PhotoMode.Pawns.Deselect>
+    <PhotoMode.Pawns.Facing>Facing</PhotoMode.Pawns.Facing>
+    <PhotoMode.Pawns.Facing.North>N</PhotoMode.Pawns.Facing.North>
+    <PhotoMode.Pawns.Facing.East>E</PhotoMode.Pawns.Facing.East>
+    <PhotoMode.Pawns.Facing.South>S</PhotoMode.Pawns.Facing.South>
+    <PhotoMode.Pawns.Facing.West>W</PhotoMode.Pawns.Facing.West>
+    <PhotoMode.Pawns.RotateClockwise>Rotate CW</PhotoMode.Pawns.RotateClockwise>
+    <PhotoMode.Pawns.RotateCounterclockwise>Rotate CCW</PhotoMode.Pawns.RotateCounterclockwise>
+    <PhotoMode.Pawns.Pose>Pose</PhotoMode.Pawns.Pose>
+    <PhotoMode.Pawns.Pose.Standing>Standing</PhotoMode.Pawns.Pose.Standing>
+    <PhotoMode.Pawns.Pose.Laying>Laying</PhotoMode.Pawns.Pose.Laying>
+    <PhotoMode.Pawns.Pose.Unsupported>Laying pose isn't supported for this pawn.</PhotoMode.Pawns.Pose.Unsupported>
+    <PhotoMode.Pawns.Position>Position</PhotoMode.Pawns.Position>
+    <PhotoMode.Pawns.OffsetX>Offset X: {0}</PhotoMode.Pawns.OffsetX>
+    <PhotoMode.Pawns.OffsetZ>Offset Z: {0}</PhotoMode.Pawns.OffsetZ>
+    <PhotoMode.Pawns.ResetPosition>Reset Position</PhotoMode.Pawns.ResetPosition>
+    <PhotoMode.Pawns.ResetSelected>Reset Selected</PhotoMode.Pawns.ResetSelected>
+    <PhotoMode.Pawns.ResetAll>Reset All Pawn Overrides</PhotoMode.Pawns.ResetAll>
+    <PhotoMode.Section.Presets>Presets</PhotoMode.Section.Presets>
+    <PhotoMode.Presets.Save>Save New</PhotoMode.Presets.Save>
+    <PhotoMode.Presets.None>No saved presets.</PhotoMode.Presets.None>
+    <PhotoMode.Presets.Load>Load</PhotoMode.Presets.Load>
+    <PhotoMode.Presets.Rename>Rename</PhotoMode.Presets.Rename>
+    <PhotoMode.Presets.Duplicate>Duplicate</PhotoMode.Presets.Duplicate>
+    <PhotoMode.Presets.Delete>Delete</PhotoMode.Presets.Delete>
+    <PhotoMode.Presets.Confirm>OK</PhotoMode.Presets.Confirm>
+    <PhotoMode.Presets.Cancel>Cancel</PhotoMode.Presets.Cancel>
+    <PhotoMode.Presets.ResetToDefault>Reset to Default</PhotoMode.Presets.ResetToDefault>
+    <PhotoMode.Presets.CopyName>{0} (Copy)</PhotoMode.Presets.CopyName>
+    <PhotoMode.Presets.Status.NameRequired>Enter a preset name first.</PhotoMode.Presets.Status.NameRequired>
+    <PhotoMode.Presets.Status.Saved>Saved preset "{0}".</PhotoMode.Presets.Status.Saved>
+    <PhotoMode.Presets.Status.SaveFailed>Couldn't save preset.</PhotoMode.Presets.Status.SaveFailed>
+    <PhotoMode.Presets.Status.Loaded>Loaded preset "{0}".</PhotoMode.Presets.Status.Loaded>
+    <PhotoMode.Presets.Status.LoadFailed>Couldn't load preset (missing or corrupt file).</PhotoMode.Presets.Status.LoadFailed>
+    <PhotoMode.Presets.Status.WeatherMissing>Loaded "{0}", but its weather isn't available (from a missing mod?); using current weather instead.</PhotoMode.Presets.Status.WeatherMissing>
+    <PhotoMode.Presets.Status.LutMissing>Loaded "{0}", but its LUT isn't available (file may have been moved or removed); using no LUT instead.</PhotoMode.Presets.Status.LutMissing>
+    <PhotoMode.Presets.Status.Renamed>Renamed preset to "{0}".</PhotoMode.Presets.Status.Renamed>
+    <PhotoMode.Presets.Status.RenameFailed>Couldn't rename preset.</PhotoMode.Presets.Status.RenameFailed>
+    <PhotoMode.Presets.Status.Duplicated>Duplicated as "{0}".</PhotoMode.Presets.Status.Duplicated>
+    <PhotoMode.Presets.Status.DuplicateFailed>Couldn't duplicate preset.</PhotoMode.Presets.Status.DuplicateFailed>
+    <PhotoMode.Presets.Status.Deleted>Deleted preset "{0}".</PhotoMode.Presets.Status.Deleted>
+    <PhotoMode.Presets.Status.DeleteFailed>Couldn't delete preset.</PhotoMode.Presets.Status.DeleteFailed>
+    <PhotoMode.Presets.Status.ResetDone>Reset to default.</PhotoMode.Presets.Status.ResetDone>
+
+    <PhotoMode.Section.Image>Image</PhotoMode.Section.Image>
+    <PhotoMode.Section.Effects>Effects</PhotoMode.Section.Effects>
+    <PhotoMode.Section.Capture>Capture</PhotoMode.Section.Capture>
+    <PhotoMode.CaptureSaved>Photo saved as {0}</PhotoMode.CaptureSaved>
+    <PhotoMode.CaptureFailed>Photo capture failed: {0}</PhotoMode.CaptureFailed>
+    <PhotoMode.Capture.Resolution>Resolution: {0}x{1}</PhotoMode.Capture.Resolution>
+    <PhotoMode.Capture.AspectAndPixels>Aspect {0}:1, {1} MP</PhotoMode.Capture.AspectAndPixels>
+    <PhotoMode.Capture.Mode.Screen>Screen</PhotoMode.Capture.Mode.Screen>
+    <PhotoMode.Capture.Mode.Fixed>Fixed</PhotoMode.Capture.Mode.Fixed>
+    <PhotoMode.Capture.Mode.Custom>Custom</PhotoMode.Capture.Mode.Custom>
+    <PhotoMode.Capture.Invalid.InvalidDimensions>Width and height must be greater than zero.</PhotoMode.Capture.Invalid.InvalidDimensions>
+    <PhotoMode.Capture.Invalid.ExceedsMaxTextureSize>Exceeds this GPU's maximum texture size.</PhotoMode.Capture.Invalid.ExceedsMaxTextureSize>
+    <PhotoMode.Capture.Invalid.ExceedsMaxPixelCount>Exceeds the maximum supported pixel count.</PhotoMode.Capture.Invalid.ExceedsMaxPixelCount>
+    <PhotoMode.Capture.Invalid.UnsupportedRenderTarget>This GPU does not support the required render target format.</PhotoMode.Capture.Invalid.UnsupportedRenderTarget>
+    <PhotoMode.Capture.Button>Capture Screenshot ({0})</PhotoMode.Capture.Button>
+    <PhotoMode.Capture.Button.Busy>Capturing...</PhotoMode.Capture.Button.Busy>
+    <PhotoMode.Capture.Status.Success>Saved {0}</PhotoMode.Capture.Status.Success>
+    <PhotoMode.Capture.OpenFolder>Open Screenshot Folder</PhotoMode.Capture.OpenFolder>
+
+    <PhotoMode.Image.Exposure>Exposure: {0}</PhotoMode.Image.Exposure>
+    <PhotoMode.Image.Brightness>Brightness: {0}</PhotoMode.Image.Brightness>
+    <PhotoMode.Image.Contrast>Contrast: {0}</PhotoMode.Image.Contrast>
+    <PhotoMode.Image.Gamma>Gamma (tone curve): {0}</PhotoMode.Image.Gamma>
+    <PhotoMode.Image.Gamma.Tooltip>Above 1 brightens; below 1 darkens. Black and white points stay fixed.</PhotoMode.Image.Gamma.Tooltip>
+    <PhotoMode.Image.Saturation>Saturation: {0}</PhotoMode.Image.Saturation>
+    <PhotoMode.Image.Temperature>Temperature: {0}</PhotoMode.Image.Temperature>
+    <PhotoMode.Image.Tint>Tint: {0}</PhotoMode.Image.Tint>
+    <PhotoMode.Image.Reset>Reset</PhotoMode.Image.Reset>
+    <PhotoMode.Image.ResetAll>Reset Image Settings</PhotoMode.Image.ResetAll>
+
+    <PhotoMode.Image.Filters>Filters</PhotoMode.Image.Filters>
+    <PhotoMode.Image.Filter.Vanilla>Vanilla</PhotoMode.Image.Filter.Vanilla>
+    <PhotoMode.Image.Filter.Warm>Warm</PhotoMode.Image.Filter.Warm>
+    <PhotoMode.Image.Filter.Cold>Cold</PhotoMode.Image.Filter.Cold>
+    <PhotoMode.Image.Filter.Cinematic>Cinematic</PhotoMode.Image.Filter.Cinematic>
+    <PhotoMode.Image.Filter.HighContrast>High Contrast</PhotoMode.Image.Filter.HighContrast>
+    <PhotoMode.Image.Filter.Desaturated>Desaturated</PhotoMode.Image.Filter.Desaturated>
+    <PhotoMode.Image.Filter.BlackAndWhite>Black &amp; White</PhotoMode.Image.Filter.BlackAndWhite>
+    <PhotoMode.Image.Filter.Sepia>Sepia</PhotoMode.Image.Filter.Sepia>
+
+    <PhotoMode.Effects.VignetteEnabled>Enable vignette</PhotoMode.Effects.VignetteEnabled>
+    <PhotoMode.Effects.VignetteIntensity>Intensity: {0}</PhotoMode.Effects.VignetteIntensity>
+    <PhotoMode.Effects.VignetteRadius>Radius: {0}</PhotoMode.Effects.VignetteRadius>
+    <PhotoMode.Effects.VignetteSoftness>Softness: {0}</PhotoMode.Effects.VignetteSoftness>
+    <PhotoMode.Effects.ResetVignette>Reset Vignette</PhotoMode.Effects.ResetVignette>
+
+    <PhotoMode.Effects.SharpenEnabled>Enable sharpen</PhotoMode.Effects.SharpenEnabled>
+    <PhotoMode.Effects.SharpenStrength>Strength: {0}</PhotoMode.Effects.SharpenStrength>
+    <PhotoMode.Effects.ResetSharpen>Reset Sharpen</PhotoMode.Effects.ResetSharpen>
+
+    <PhotoMode.Effects.BloomEnabled>Enable bloom</PhotoMode.Effects.BloomEnabled>
+    <PhotoMode.Effects.BloomIntensity>Intensity: {0}</PhotoMode.Effects.BloomIntensity>
+    <PhotoMode.Effects.BloomThreshold>Threshold: {0}</PhotoMode.Effects.BloomThreshold>
+    <PhotoMode.Effects.BloomSpread>Spread: {0}</PhotoMode.Effects.BloomSpread>
+    <PhotoMode.Effects.ResetBloom>Reset Bloom</PhotoMode.Effects.ResetBloom>
+
+    <PhotoMode.Effects.Lut>LUT: {0}</PhotoMode.Effects.Lut>
+    <PhotoMode.Effects.LutNone>None</PhotoMode.Effects.LutNone>
+    <PhotoMode.Effects.LutCustomLabel>Custom: {0}</PhotoMode.Effects.LutCustomLabel>
+    <PhotoMode.Effects.LutIntensity>Intensity: {0}</PhotoMode.Effects.LutIntensity>
+    <PhotoMode.Effects.OpenLutFolder>Open Custom LUT Folder</PhotoMode.Effects.OpenLutFolder>
+    <PhotoMode.Effects.ResetLut>Reset LUT</PhotoMode.Effects.ResetLut>
+
+    <PhotoMode.Effects.GrainEnabled>Enable film grain</PhotoMode.Effects.GrainEnabled>
+    <PhotoMode.Effects.GrainIntensity>Intensity: {0}</PhotoMode.Effects.GrainIntensity>
+    <PhotoMode.Effects.GrainSize>Grain Size: {0}</PhotoMode.Effects.GrainSize>
+    <PhotoMode.Effects.ResetGrain>Reset Film Grain</PhotoMode.Effects.ResetGrain>
+
+    <PhotoMode.Effects.ChromaticAberrationEnabled>Enable chromatic aberration</PhotoMode.Effects.ChromaticAberrationEnabled>
+    <PhotoMode.Effects.ChromaticAberrationIntensity>Intensity: {0}</PhotoMode.Effects.ChromaticAberrationIntensity>
+    <PhotoMode.Effects.ResetChromaticAberration>Reset Chromatic Aberration</PhotoMode.Effects.ResetChromaticAberration>
+
+    <PhotoMode.Effects.TiltShiftEnabled>Enable tilt-shift</PhotoMode.Effects.TiltShiftEnabled>
+    <PhotoMode.Effects.TiltShiftFocusPosition>Focus Position: {0}</PhotoMode.Effects.TiltShiftFocusPosition>
+    <PhotoMode.Effects.TiltShiftFocusWidth>Focus Width: {0}</PhotoMode.Effects.TiltShiftFocusWidth>
+    <PhotoMode.Effects.TiltShiftStrength>Blur Strength: {0}</PhotoMode.Effects.TiltShiftStrength>
+    <PhotoMode.Effects.TiltShiftFalloff>Falloff: {0}</PhotoMode.Effects.TiltShiftFalloff>
+    <PhotoMode.Effects.ResetTiltShift>Reset Tilt-Shift</PhotoMode.Effects.ResetTiltShift>
+
+    <PhotoMode.Effects.EdgeBlurEnabled>Enable edge blur</PhotoMode.Effects.EdgeBlurEnabled>
+    <PhotoMode.Effects.EdgeBlurStrength>Strength: {0}</PhotoMode.Effects.EdgeBlurStrength>
+    <PhotoMode.Effects.ResetEdgeBlur>Reset Edge Blur</PhotoMode.Effects.ResetEdgeBlur>
+
+    <PhotoMode.Lut.Error.Missing>Selected LUT file could not be found; using no LUT instead.</PhotoMode.Lut.Error.Missing>
+    <PhotoMode.Lut.Error.Invalid>Selected LUT file is invalid or corrupt; using no LUT instead.</PhotoMode.Lut.Error.Invalid>
+
+    <PhotoMode.PanelSide>Panel side</PhotoMode.PanelSide>
+    <PhotoMode.PanelSide.Left>Left</PhotoMode.PanelSide.Left>
+    <PhotoMode.PanelSide.Right>Right</PhotoMode.PanelSide.Right>
+
+    <PhotoMode.ExtendedZoomEnabled>Extended zoom</PhotoMode.ExtendedZoomEnabled>
+    <PhotoMode.ExtendedZoomEnabled.Tooltip>Allow Photo Mode to temporarily widen the camera's zoom range beyond vanilla limits. Disable this if a camera-related mod misbehaves while Photo Mode is active.</PhotoMode.ExtendedZoomEnabled.Tooltip>
+    <PhotoMode.NonstandardCameraConfigWarning>Photo Mode detected a non-standard camera configuration (likely from another mod) and is extending its zoom range. Disable "Extended zoom" in Photo Mode settings if this causes issues.</PhotoMode.NonstandardCameraConfigWarning>
+
+    <PhotoMode.NotifyOnCapture>Notify on capture</PhotoMode.NotifyOnCapture>
+    <PhotoMode.NotifyOnCapture.Tooltip>Show a message with the saved filename whenever a Photo Mode screenshot is captured.</PhotoMode.NotifyOnCapture.Tooltip>
+
+    <PhotoMode.HideHandleWhenPanelHidden>Hide "Show" handle when panel is hidden</PhotoMode.HideHandleWhenPanelHidden>
+    <PhotoMode.HideHandleWhenPanelHidden.Tooltip>When the Photo Mode panel is hidden, don't show the small handle used to bring it back. Use the show/hide panel hotkey instead.</PhotoMode.HideHandleWhenPanelHidden.Tooltip>
+
+    <PhotoMode.ShowMainButton>Show main button</PhotoMode.ShowMainButton>
+    <PhotoMode.ShowMainButton.Tooltip>Show a Photo Mode icon in the main button bar at the bottom of the screen as an alternative to the keyboard shortcut.</PhotoMode.ShowMainButton.Tooltip>
+
+    <PhotoMode.Section.Controls>Controls</PhotoMode.Section.Controls>
+    <PhotoMode.Controls.NotBound>Not bound</PhotoMode.Controls.NotBound>
+    <PhotoMode.Controls.Hint>Rebind these in Options -&gt; {0}.</PhotoMode.Controls.Hint>
+
+    <PhotoMode.PatchLifetime>Harmony patch lifetime</PhotoMode.PatchLifetime>
+    <PhotoMode.PatchLifetime.Dynamic>Patch only while Photo Mode is active</PhotoMode.PatchLifetime.Dynamic>
+    <PhotoMode.PatchLifetime.Dynamic.Tooltip>Default. Applies Photo Mode's Harmony patches while entering Photo Mode and removes them when it closes. This avoids Photo Mode patch callbacks during normal gameplay, but entering or leaving Photo Mode may briefly pause while Harmony rebuilds affected methods.</PhotoMode.PatchLifetime.Dynamic.Tooltip>
+    <PhotoMode.PatchLifetime.AlwaysLoaded>Keep Harmony patches loaded</PhotoMode.PatchLifetime.AlwaysLoaded>
+    <PhotoMode.PatchLifetime.AlwaysLoaded.Tooltip>Compatibility mode. Registers Photo Mode's Harmony patches when the game loads and keeps them registered. Opening and closing Photo Mode is faster, but patched game methods run a small inactive Photo Mode check during normal gameplay. Choose this if changing patches while playing conflicts with another mod.</PhotoMode.PatchLifetime.AlwaysLoaded.Tooltip>
+    <PhotoMode.PatchLifetime.Locked>Cannot be changed while Photo Mode is active or transitioning.</PhotoMode.PatchLifetime.Locked>
+
+    <PhotoMode.Transition.Preparing>Preparing Photo Mode</PhotoMode.Transition.Preparing>
+    <PhotoMode.Transition.Restoring>Restoring game</PhotoMode.Transition.Restoring>
+</LanguageData>

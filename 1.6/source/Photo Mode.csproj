@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.props" Condition="Exists('packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{249F53A5-1CB3-4068-ABC0-9FCA6398ABE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Photo_Mode</RootNamespace>
+    <AssemblyName>Photo Mode</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>embedded</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mod.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ModSettings.cs" />
+    <Compile Include="ModSettingsWindow.cs" />
+    <Compile Include="PhotoMode\Core\PhotoModeState.cs" />
+    <Compile Include="PhotoMode\Core\PhotoModeManager.cs" />
+    <Compile Include="PhotoMode\Core\GameComponent_PhotoMode.cs" />
+    <Compile Include="PhotoMode\Core\PhotoModeKeyBindingDefOf.cs" />
+    <Compile Include="PhotoMode\Core\PhotoModeLifecyclePatches.cs" />
+    <Compile Include="PhotoMode\Core\PhotoModePatchController.cs" />
+    <Compile Include="PhotoMode\Core\PhotoModePatchPump.cs" />
+    <Compile Include="PhotoMode\Camera\CameraSession.cs" />
+    <Compile Include="PhotoMode\Camera\PhotoCameraController.cs" />
+    <Compile Include="PhotoMode\Camera\PhotoModeCameraPatches.cs" />
+    <Compile Include="PhotoMode\Capture\PhotoCaptureService.cs" />
+    <Compile Include="PhotoMode\Capture\PhotoModeCaptureDebugActions.cs" />
+    <Compile Include="PhotoMode\Capture\PhotoModeCaptureViewRectPatches.cs" />
+    <Compile Include="PhotoMode\Capture\PhotoOutputService.cs" />
+    <Compile Include="PhotoMode\Environment\PhotoModeWeatherOverlayPatches.cs" />
+    <Compile Include="PhotoMode\Environment\PhotoSkyCalculator.cs" />
+    <Compile Include="PhotoMode\Environment\PhotoTimeOfDayRenderParticipant.cs" />
+    <Compile Include="PhotoMode\Environment\PhotoWeatherOverlayRenderParticipant.cs" />
+    <Compile Include="PhotoMode\Environment\PhotoWeatherOverlaySupport.cs" />
+    <Compile Include="PhotoMode\Pawns\PhotoModePawnRenderPatches.cs" />
+    <Compile Include="PhotoMode\Pawns\PhotoModePawnSelectionPatches.cs" />
+    <Compile Include="PhotoMode\Pawns\PhotoPawnPoseRenderer.cs" />
+    <Compile Include="PhotoMode\Pawns\PhotoPawnPoseSupport.cs" />
+    <Compile Include="PhotoMode\Pawns\PhotoPawnSelector.cs" />
+    <Compile Include="PhotoMode\Presets\PhotoPresetData.cs" />
+    <Compile Include="PhotoMode\Presets\PhotoPresetService.cs" />
+    <Compile Include="PhotoMode\Rendering\PhotoColorFilters.cs" />
+    <Compile Include="PhotoMode\Rendering\PhotoLutLibrary.cs" />
+    <Compile Include="PhotoMode\Rendering\PhotoModeOverlayPatches.cs" />
+    <Compile Include="PhotoMode\Rendering\PhotoModeRenderPatches.cs" />
+    <Compile Include="PhotoMode\Rendering\PhotoPostProcess.cs" />
+    <Compile Include="PhotoMode\Rendering\RenderOverrideScope.cs" />
+    <Compile Include="PhotoMode\UI\MainButtonWorker_PhotoMode.cs" />
+    <Compile Include="PhotoMode\UI\PhotoModeHiddenPanelHandle.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Chrome.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Controls.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Camera.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Overlay.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Scene.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Pawns.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Presets.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Image.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Effects.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Capture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp:Verse.PawnRenderer.pawn" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.props'))" />
+    <Error Condition="!Exists('packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.targets'))" />
+  </Target>
+  <Import Project="packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.targets" Condition="Exists('packages\Krafs.Publicizer.2.3.2\build\Krafs.Publicizer.targets')" />
+</Project>

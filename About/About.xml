@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Photo Mode</name>
+    <author>Sk</author>
+    <packageId>sk.photomode</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>Adds a dedicated Photo Mode for composing and capturing screenshots. Free-fly the camera, tweak time of day and weather, pose and adjust pawns, and apply image effects like exposure, vignette, and chromatic aberration.</description>
+    <modVersion>1.0.0</modVersion>
+    <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3799924005</url>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+        </li>
+    </modDependencies>
+</ModMetaData>

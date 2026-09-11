@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <KeyBindingCategoryDef>
+    <defName>PhotoMode</defName>
+    <label>Photo Mode</label>
+    <description>Controls for Photo Mode.</description>
+    <isGameUniversal>true</isGameUniversal>
+    <checkForConflicts>
+      <li>Game</li>
+      <li>GameMapCamera</li>
+      <li>SelectionMisc</li>
+      <li>MainTabs</li>
+    </checkForConflicts>
+  </KeyBindingCategoryDef>
+
+  <KeyBindingDef>
+    <defName>PhotoMode_ToggleActive</defName>
+    <label>toggle</label>
+    <category>PhotoMode</category>
+  </KeyBindingDef>
+
+  <KeyBindingDef>
+    <defName>PhotoMode_HoldPreviewBypass</defName>
+    <label>hold for before/after preview</label>
+    <category>PhotoMode</category>
+  </KeyBindingDef>
+
+  <KeyBindingDef>
+    <defName>PhotoMode_Capture</defName>
+    <label>capture screenshot</label>
+    <category>PhotoMode</category>
+  </KeyBindingDef>
+
+  <KeyBindingDef>
+    <defName>PhotoMode_TogglePanel</defName>
+    <label>show/hide panel</label>
+    <category>PhotoMode</category>
+  </KeyBindingDef>
+
+</Defs>

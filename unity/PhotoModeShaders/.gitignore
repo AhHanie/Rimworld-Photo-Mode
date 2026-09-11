@@ -1,0 +1,17 @@
+Library/
+Temp/
+Obj/
+Build/
+Logs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+*.csproj
+*.sln
+*.unityproj
+sysinfo.txt
+
+!Packages/manifest.json
+!Packages/packages-lock.json
+
+!*.meta
