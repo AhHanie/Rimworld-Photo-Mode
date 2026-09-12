@@ -21,6 +21,7 @@
     <PhotoMode.Overlay.HideColonistBar>Hide colonist bar</PhotoMode.Overlay.HideColonistBar>
     <PhotoMode.Overlay.HideSelectionBrackets>Hide selection brackets</PhotoMode.Overlay.HideSelectionBrackets>
     <PhotoMode.Overlay.HideDesignationOverlays>Hide designation overlays</PhotoMode.Overlay.HideDesignationOverlays>
+    <PhotoMode.Overlay.ShowBlueprintsAsConstructed>Show blueprints as fully constructed</PhotoMode.Overlay.ShowBlueprintsAsConstructed>
     <PhotoMode.Overlay.HideTargetingIndicators>Hide targeting indicators</PhotoMode.Overlay.HideTargetingIndicators>
     <PhotoMode.Overlay.HideInteractionBubbles>Hide interaction bubbles</PhotoMode.Overlay.HideInteractionBubbles>
     <PhotoMode.Overlay.HideMotes>Hide motes/text notifications</PhotoMode.Overlay.HideMotes>

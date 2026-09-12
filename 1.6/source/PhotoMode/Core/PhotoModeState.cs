@@ -185,6 +185,7 @@ namespace Photo_Mode
         public bool HideTargetingIndicators = true;
         public bool HideCursor = true;
         public bool HideForbiddenDesignator = true;
+        public bool ShowBlueprintsAsConstructed;
 
         public void Reset()
         {
@@ -201,6 +202,7 @@ namespace Photo_Mode
             HideTargetingIndicators = true;
             HideCursor = true;
             HideForbiddenDesignator = true;
+            ShowBlueprintsAsConstructed = false;
         }
     }
 

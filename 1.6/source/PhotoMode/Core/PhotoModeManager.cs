@@ -190,6 +190,7 @@ namespace Photo_Mode
         {
             try
             {
+                RestoreBlueprintPreview();
                 CaptureService.CancelIfActive(reason);
                 RenderScope.ForceCloseIfActive();
                 PhotoPostProcess.Detach();
@@ -207,6 +208,7 @@ namespace Photo_Mode
         public void Reset()
         {
             ClosePanelIfOpen();
+            RestoreBlueprintPreview();
             CaptureService.CancelIfActive("Reset");
             RenderScope.ForceCloseIfActive();
             PhotoPostProcess.Detach();
@@ -217,11 +219,35 @@ namespace Photo_Mode
         public void Dispose()
         {
             ClosePanelIfOpen();
+            RestoreBlueprintPreview();
             CaptureService.CancelIfActive("Dispose");
             RenderScope.ForceCloseIfActive();
             PhotoPostProcess.Detach();
             weatherOverlayParticipant.ClearMaterialCache();
             State.Reset();
+        }
+
+        private void RestoreBlueprintPreview()
+        {
+            bool wasEnabled = State.Overlay.ShowBlueprintsAsConstructed;
+            State.Overlay.ShowBlueprintsAsConstructed = false;
+            PhotoBlueprintRenderService.ClearProxyCache();
+
+            if (wasEnabled)
+            {
+                PhotoBlueprintRenderService.InvalidateBlueprintMeshes(State.TargetMap);
+            }
+        }
+
+        public void SetShowBlueprintsAsConstructed(bool enabled)
+        {
+            if (!State.Active || State.Overlay.ShowBlueprintsAsConstructed == enabled)
+            {
+                return;
+            }
+
+            State.Overlay.ShowBlueprintsAsConstructed = enabled;
+            PhotoBlueprintRenderService.InvalidateBlueprintMeshes(State.TargetMap);
         }
 
         public void EnableCleanScreenshot()

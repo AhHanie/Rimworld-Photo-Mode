@@ -114,6 +114,7 @@
     <Compile Include="PhotoMode\Pawns\PhotoPawnSelector.cs" />
     <Compile Include="PhotoMode\Presets\PhotoPresetData.cs" />
     <Compile Include="PhotoMode\Presets\PhotoPresetService.cs" />
+    <Compile Include="PhotoMode\Rendering\PhotoBlueprintRenderPatches.cs" />
     <Compile Include="PhotoMode\Rendering\PhotoColorFilters.cs" />
     <Compile Include="PhotoMode\Rendering\PhotoLutLibrary.cs" />
     <Compile Include="PhotoMode\Rendering\PhotoModeOverlayPatches.cs" />

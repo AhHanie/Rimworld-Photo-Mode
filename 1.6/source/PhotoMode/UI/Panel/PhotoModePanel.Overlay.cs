@@ -26,6 +26,14 @@ namespace Photo_Mode
                 listing.CheckboxLabeled("PhotoMode.Overlay.HideColonistBar".Translate(), ref overlay.HideColonistBar);
                 listing.CheckboxLabeled("PhotoMode.Overlay.HideSelectionBrackets".Translate(), ref overlay.HideSelectionBrackets);
                 listing.CheckboxLabeled("PhotoMode.Overlay.HideDesignationOverlays".Translate(), ref overlay.HideDesignationOverlays);
+
+                bool showBlueprintsAsConstructed = overlay.ShowBlueprintsAsConstructed;
+                listing.CheckboxLabeled("PhotoMode.Overlay.ShowBlueprintsAsConstructed".Translate(), ref showBlueprintsAsConstructed);
+                if (showBlueprintsAsConstructed != overlay.ShowBlueprintsAsConstructed)
+                {
+                    manager.SetShowBlueprintsAsConstructed(showBlueprintsAsConstructed);
+                }
+
                 listing.CheckboxLabeled("PhotoMode.Overlay.HideTargetingIndicators".Translate(), ref overlay.HideTargetingIndicators);
                 listing.CheckboxLabeled("PhotoMode.Overlay.HideInteractionBubbles".Translate(), ref overlay.HideInteractionBubbles);
                 listing.CheckboxLabeled("PhotoMode.Overlay.HideMotes".Translate(), ref overlay.HideMotes);
