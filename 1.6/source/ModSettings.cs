@@ -22,6 +22,7 @@ namespace Photo_Mode
         public static bool OverlaySectionCollapsed;
         public static bool SceneSectionCollapsed;
         public static bool PawnsSectionCollapsed;
+        public static bool SceneDressingSectionCollapsed;
         public static bool PresetsSectionCollapsed;
         public static bool ImageSectionCollapsed;
         public static bool EffectsSectionCollapsed;
@@ -45,6 +46,7 @@ namespace Photo_Mode
             Scribe_Values.Look(ref OverlaySectionCollapsed, "overlaySectionCollapsed");
             Scribe_Values.Look(ref SceneSectionCollapsed, "sceneSectionCollapsed");
             Scribe_Values.Look(ref PawnsSectionCollapsed, "pawnsSectionCollapsed");
+            Scribe_Values.Look(ref SceneDressingSectionCollapsed, "sceneDressingSectionCollapsed", defaultValue: true);
             Scribe_Values.Look(ref PresetsSectionCollapsed, "presetsSectionCollapsed");
             Scribe_Values.Look(ref ImageSectionCollapsed, "imageSectionCollapsed");
             Scribe_Values.Look(ref EffectsSectionCollapsed, "effectsSectionCollapsed");

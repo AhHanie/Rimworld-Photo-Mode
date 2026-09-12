@@ -74,6 +74,40 @@
     <PhotoMode.Pawns.ResetPosition>Reset Position</PhotoMode.Pawns.ResetPosition>
     <PhotoMode.Pawns.ResetSelected>Reset Selected</PhotoMode.Pawns.ResetSelected>
     <PhotoMode.Pawns.ResetAll>Reset All Pawn Overrides</PhotoMode.Pawns.ResetAll>
+    <PhotoMode.Section.SceneDressing>Scene Dressing</PhotoMode.Section.SceneDressing>
+    <PhotoMode.SceneDressing.Hint>Paint extra visual-only pawns, props, and atmosphere into this photo. Nothing here is ever saved or affects the game.</PhotoMode.SceneDressing.Hint>
+    <PhotoMode.SceneDressing.BrushActive>Enable brush</PhotoMode.SceneDressing.BrushActive>
+    <PhotoMode.SceneDressing.BrushActiveHint>Click the map to paint or erase. Clicking a pawn still selects it.</PhotoMode.SceneDressing.BrushActiveHint>
+    <PhotoMode.SceneDressing.Mode.Pawns>Pawns</PhotoMode.SceneDressing.Mode.Pawns>
+    <PhotoMode.SceneDressing.Mode.Props>Props</PhotoMode.SceneDressing.Mode.Props>
+    <PhotoMode.SceneDressing.Mode.Atmosphere>Atmosphere</PhotoMode.SceneDressing.Mode.Atmosphere>
+    <PhotoMode.SceneDressing.Tool.Paint>Paint</PhotoMode.SceneDressing.Tool.Paint>
+    <PhotoMode.SceneDressing.Tool.Erase>Erase</PhotoMode.SceneDressing.Tool.Erase>
+    <PhotoMode.SceneDressing.BrushRadius>Brush radius: {0}</PhotoMode.SceneDressing.BrushRadius>
+    <PhotoMode.SceneDressing.Density>Density per click: {0}</PhotoMode.SceneDressing.Density>
+    <PhotoMode.SceneDressing.NoSource>Select a pawn in the Pawns section first to use it as the clone source.</PhotoMode.SceneDressing.NoSource>
+    <PhotoMode.SceneDressing.CloneSource>Clone source: {0}</PhotoMode.SceneDressing.CloneSource>
+    <PhotoMode.SceneDressing.RandomFacing>Random facing</PhotoMode.SceneDressing.RandomFacing>
+    <PhotoMode.SceneDressing.PawnCloneCount>Pawn copies: {0} / {1}</PhotoMode.SceneDressing.PawnCloneCount>
+    <PhotoMode.SceneDressing.NoPropSelected>Select a prop...</PhotoMode.SceneDressing.NoPropSelected>
+    <PhotoMode.SceneDressing.PropScale>Prop scale: {0}</PhotoMode.SceneDressing.PropScale>
+    <PhotoMode.SceneDressing.RandomRotation>Random rotation</PhotoMode.SceneDressing.RandomRotation>
+    <PhotoMode.SceneDressing.PropRotation>Rotation: {0}°</PhotoMode.SceneDressing.PropRotation>
+    <PhotoMode.SceneDressing.Atmosphere.Blood>Blood</PhotoMode.SceneDressing.Atmosphere.Blood>
+    <PhotoMode.SceneDressing.Atmosphere.Dirt>Dirt</PhotoMode.SceneDressing.Atmosphere.Dirt>
+    <PhotoMode.SceneDressing.Atmosphere.Ash>Ash</PhotoMode.SceneDressing.Atmosphere.Ash>
+    <PhotoMode.SceneDressing.Atmosphere.Rubble>Rubble</PhotoMode.SceneDressing.Atmosphere.Rubble>
+    <PhotoMode.SceneDressing.Atmosphere.Fire>Fire</PhotoMode.SceneDressing.Atmosphere.Fire>
+    <PhotoMode.SceneDressing.DecalOpacity>Opacity: {0}</PhotoMode.SceneDressing.DecalOpacity>
+    <PhotoMode.SceneDressing.DecalScale>Scale: {0}</PhotoMode.SceneDressing.DecalScale>
+    <PhotoMode.SceneDressing.FireScale>Flame scale: {0}</PhotoMode.SceneDressing.FireScale>
+    <PhotoMode.SceneDressing.Count>Elements: {0} / {1}</PhotoMode.SceneDressing.Count>
+    <PhotoMode.SceneDressing.CapReached>Element cap reached. Erase or clear some elements to add more.</PhotoMode.SceneDressing.CapReached>
+    <PhotoMode.SceneDressing.PawnCapReached>Pawn copy cap reached.</PhotoMode.SceneDressing.PawnCapReached>
+    <PhotoMode.SceneDressing.Undo>Undo</PhotoMode.SceneDressing.Undo>
+    <PhotoMode.SceneDressing.ClearLayer>Clear Layer</PhotoMode.SceneDressing.ClearLayer>
+    <PhotoMode.SceneDressing.NonDestructiveHint>Scene dressing is visual only. It is discarded when Photo Mode closes or the game loads.</PhotoMode.SceneDressing.NonDestructiveHint>
+
     <PhotoMode.Section.Presets>Presets</PhotoMode.Section.Presets>
     <PhotoMode.Presets.Save>Save New</PhotoMode.Presets.Save>
     <PhotoMode.Presets.None>No saved presets.</PhotoMode.Presets.None>

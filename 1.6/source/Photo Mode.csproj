@@ -113,6 +113,13 @@
     <Compile Include="PhotoMode\Pawns\PhotoPawnPoseSupport.cs" />
     <Compile Include="PhotoMode\Pawns\PhotoPawnSelector.cs" />
     <Compile Include="PhotoMode\Presets\PhotoPresetData.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoModeManager.SceneDressing.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoModeSceneRenderPatches.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoSceneCapabilityRegistry.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoSceneElements.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoScenePainter.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoSceneRenderer.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoSceneState.cs" />
     <Compile Include="PhotoMode\Presets\PhotoPresetService.cs" />
     <Compile Include="PhotoMode\Rendering\PhotoBlueprintRenderPatches.cs" />
     <Compile Include="PhotoMode\Rendering\PhotoColorFilters.cs" />
@@ -131,6 +138,7 @@
     <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Scene.cs" />
     <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Pawns.cs" />
     <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Presets.cs" />
+    <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.SceneDressing.cs" />
     <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Image.cs" />
     <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Effects.cs" />
     <Compile Include="PhotoMode\UI\Panel\PhotoModePanel.Capture.cs" />
@@ -141,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Publicize Include="Assembly-CSharp:Verse.PawnRenderer.pawn" />
+    <Publicize Include="Assembly-CSharp:Verse.Graphic_Collection.subGraphics" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

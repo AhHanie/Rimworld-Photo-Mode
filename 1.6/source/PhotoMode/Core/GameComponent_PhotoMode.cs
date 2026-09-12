@@ -25,6 +25,7 @@ namespace Photo_Mode
             Manager.State.PreviewBypassed = PhotoModeKeyBindingDefOf.PhotoMode_HoldPreviewBypass.IsDown || Manager.State.PreviewBypassMouseHeld;
             Manager.ValidatePawnState();
             Manager.ValidateEnvironmentState();
+            Manager.ValidateSceneState();
         }
 
         public override void GameComponentOnGUI()

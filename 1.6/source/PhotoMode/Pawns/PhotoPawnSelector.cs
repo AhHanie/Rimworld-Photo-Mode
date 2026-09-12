@@ -130,6 +130,11 @@ namespace Photo_Mode
             return pawns;
         }
 
+        public static bool IsPawnUnderMouse(Map map)
+        {
+            return PawnUnderMouse(map) != null;
+        }
+
         private static Pawn PawnUnderMouse(Map map)
         {
             TargetingParameters targetingParameters = new TargetingParameters

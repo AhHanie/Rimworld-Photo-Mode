@@ -98,6 +98,7 @@ namespace Photo_Mode
             DrawOverlaySection(listing, ref ModSettings.OverlaySectionCollapsed);
             DrawSceneSection(listing, ref ModSettings.SceneSectionCollapsed);
             DrawPawnsSection(listing, ref ModSettings.PawnsSectionCollapsed);
+            DrawSceneDressingSection(listing, ref ModSettings.SceneDressingSectionCollapsed);
             DrawPresetsSection(listing, ref ModSettings.PresetsSectionCollapsed);
             DrawImageSection(listing, ref ModSettings.ImageSectionCollapsed);
             DrawEffectsSection(listing, ref ModSettings.EffectsSectionCollapsed);

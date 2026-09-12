@@ -13,7 +13,7 @@ namespace Photo_Mode
         Exiting
     }
 
-    public class PhotoModeManager
+    public partial class PhotoModeManager
     {
         public static PhotoModeManager Current { get; private set; }
 
@@ -197,6 +197,7 @@ namespace Photo_Mode
                 RenderScope.ForceCloseIfActive();
                 PhotoPostProcess.Detach();
                 weatherOverlayParticipant.ClearMaterialCache();
+                PhotoScenePainter.ResetDragState();
                 cameraSession.Restore();
             }
             finally
@@ -217,6 +218,7 @@ namespace Photo_Mode
                 RenderScope.ForceCloseIfActive();
                 PhotoPostProcess.Detach();
                 weatherOverlayParticipant.ClearMaterialCache();
+                PhotoScenePainter.ResetDragState();
                 cameraSession.Restore();
             }
             finally
@@ -235,6 +237,7 @@ namespace Photo_Mode
                 RenderScope.ForceCloseIfActive();
                 PhotoPostProcess.Detach();
                 weatherOverlayParticipant.ClearMaterialCache();
+                PhotoScenePainter.ResetDragState();
                 cameraSession.Restore();
             }
             finally

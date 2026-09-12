@@ -12,12 +12,14 @@ namespace Photo_Mode
         public bool PreviewBypassed;
         public bool PreviewBypassMouseHeld;
         public bool ShowDevToolbar;
+        public bool SceneDressingToolActive;
 
         public readonly PhotoModeCameraState Camera = new PhotoModeCameraState();
         public readonly PhotoEnvironmentState Environment = new PhotoEnvironmentState();
         public readonly PhotoImageSettings Image = new PhotoImageSettings();
         public readonly PhotoOverlayOptions Overlay = new PhotoOverlayOptions();
         public readonly CaptureSettings Capture = new CaptureSettings();
+        public readonly PhotoSceneState SceneDressing = new PhotoSceneState();
 
         public readonly Dictionary<Pawn, PawnPhotoOverride> PawnOverrides = new Dictionary<Pawn, PawnPhotoOverride>();
         public readonly List<Pawn> SelectedPawns = new List<Pawn>();
@@ -30,12 +32,14 @@ namespace Photo_Mode
             PreviewBypassed = false;
             PreviewBypassMouseHeld = false;
             ShowDevToolbar = false;
+            SceneDressingToolActive = false;
 
             Camera.Reset();
             Environment.Reset();
             Image.Reset();
             Overlay.Reset();
             Capture.Reset();
+            SceneDressing.Reset();
 
             PawnOverrides.Clear();
             SelectedPawns.Clear();

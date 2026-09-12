@@ -15,6 +15,11 @@ namespace Photo_Mode
                 return true;
             }
 
+            if (PhotoSceneRenderer.IsRenderingSceneProxy)
+            {
+                return true;
+            }
+
             Pawn pawn = __instance.pawn;
             if (pawn == null || !pawn.Spawned)
             {
