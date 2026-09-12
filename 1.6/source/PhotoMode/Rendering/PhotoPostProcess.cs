@@ -4,6 +4,7 @@ using Verse;
 
 namespace Photo_Mode
 {
+    [StaticConstructorOnStartup]
     public class PhotoPostProcess : MonoBehaviour
     {
         private const string ShaderPath = "PhotoMode/OnePass";
