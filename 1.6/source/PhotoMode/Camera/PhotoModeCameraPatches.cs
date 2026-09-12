@@ -55,6 +55,7 @@ namespace Photo_Mode
             manager.CameraController.HandleUpdate(map, manager.State.Camera);
 
             __instance.SetRootPosAndSize(manager.CameraController.CurrentPos, manager.CameraController.CurrentSize);
+            manager.CameraSession.ApplyRoll(manager.State.Camera.RollDegrees);
 
             RememberedCameraPos remembered = map.rememberedCameraPos;
             remembered.rootPos = manager.CameraController.CurrentPos;

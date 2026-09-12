@@ -14,6 +14,8 @@
     <PhotoMode.Camera.Speed>Movement speed: {0}x</PhotoMode.Camera.Speed>
     <PhotoMode.Camera.SmoothMovement>Smooth movement</PhotoMode.Camera.SmoothMovement>
     <PhotoMode.Camera.Zoom>Zoom: {0}</PhotoMode.Camera.Zoom>
+    <PhotoMode.Camera.Roll>Roll: {0}°</PhotoMode.Camera.Roll>
+    <PhotoMode.Camera.Roll.Tooltip>Tilts the composition around the lens axis (Dutch angle). Negative rolls counter-clockwise, positive rolls clockwise. Does not affect pawns, buildings, or the map itself.</PhotoMode.Camera.Roll.Tooltip>
     <PhotoMode.Camera.Reset>Reset camera</PhotoMode.Camera.Reset>
     <PhotoMode.Section.Overlay>Visibility</PhotoMode.Section.Overlay>
     <PhotoMode.Overlay.CleanBaseline>Use clean baseline</PhotoMode.Overlay.CleanBaseline>

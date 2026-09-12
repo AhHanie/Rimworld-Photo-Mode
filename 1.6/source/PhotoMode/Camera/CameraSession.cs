@@ -17,6 +17,10 @@ namespace Photo_Mode
         private TimeSpeed entryTimeSpeed;
         private bool screenshotModeWasActive;
 
+        private Camera capturedCamera;
+        private Quaternion entryRotation;
+        private bool rotationCaptured;
+
         private CameraMapConfig zoomConfig;
         private FloatRange originalSizeRange;
         private bool zoomRangeWidened;
@@ -37,7 +41,39 @@ namespace Photo_Mode
             entryTimeSpeed = Find.TickManager.CurTimeSpeed;
             screenshotModeWasActive = Find.UIRoot.screenshotMode.Active;
 
+            capturedCamera = Find.Camera;
+            rotationCaptured = capturedCamera != null;
+            entryRotation = rotationCaptured ? capturedCamera.transform.rotation : Quaternion.identity;
+
             CaptureZoomRange();
+        }
+
+        public void ApplyRoll(float rollDegrees)
+        {
+            if (!rotationCaptured || capturedCamera == null || Find.Camera != capturedCamera)
+            {
+                return;
+            }
+
+            capturedCamera.transform.rotation = entryRotation * Quaternion.AngleAxis(rollDegrees, Vector3.forward);
+        }
+
+        public void RestoreRotation()
+        {
+            if (rotationCaptured && capturedCamera != null)
+            {
+                if (Find.Camera == capturedCamera)
+                {
+                    capturedCamera.transform.rotation = entryRotation;
+                }
+                else
+                {
+                    Logger.Warning("Find.Camera changed during Photo Mode session; skipped restoring its original rotation.");
+                }
+            }
+
+            capturedCamera = null;
+            rotationCaptured = false;
         }
 
         private void CaptureZoomRange()
@@ -83,6 +119,8 @@ namespace Photo_Mode
 
         public void Restore()
         {
+            RestoreRotation();
+
             if (map == null)
             {
                 return;

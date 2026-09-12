@@ -15,6 +15,9 @@ namespace Photo_Mode
         private const float ZoomSpeed = 2.6f;
         private const float ZoomScaleFromAltDenominator = 35f;
 
+        public const float MinRollDegrees = -45f;
+        public const float MaxRollDegrees = 45f;
+
         private Vector3 pos;
         private Vector3 keyVelocity;
         private float size;
@@ -59,11 +62,17 @@ namespace Photo_Mode
 
             state.Position = pos;
             state.Zoom = size;
+            state.RollDegrees = 0f;
         }
 
         public void SetZoom(float value)
         {
             desiredSize = Mathf.Clamp(value, zoomMin, zoomMax);
+        }
+
+        public static float ClampRoll(float degrees)
+        {
+            return Mathf.Clamp(degrees, MinRollDegrees, MaxRollDegrees);
         }
 
         public void HandleOnGUI()
@@ -102,8 +111,13 @@ namespace Photo_Mode
                 return;
             }
 
-            delta.x *= -1f;
-            dragAccum += delta / UI.CurUICellSize() * Prefs.MapDragSensitivity;
+            Vector2 currentUI = UI.MousePositionOnUI;
+            Vector2 previousUI = currentUI - new Vector2(delta.x, -delta.y);
+
+            Vector3 worldCurrent = UI.UIToMapPosition(currentUI);
+            Vector3 worldPrevious = UI.UIToMapPosition(previousUI);
+
+            dragAccum += new Vector2(worldPrevious.x - worldCurrent.x, worldPrevious.z - worldCurrent.z) * Prefs.MapDragSensitivity;
         }
 
         public void HandleUpdate(Map map, PhotoModeCameraState state)
@@ -133,7 +147,12 @@ namespace Photo_Mode
 
                 if (keyDolly != Vector2.zero)
                 {
-                    inputDir = new Vector3(keyDolly.x, 0f, keyDolly.y).normalized;
+                    Transform camTransform = Find.Camera.transform;
+                    Vector3 right = camTransform.right;
+                    Vector3 up = camTransform.up;
+                    right.y = 0f;
+                    up.y = 0f;
+                    inputDir = (right.normalized * keyDolly.x + up.normalized * keyDolly.y).normalized;
                 }
 
                 if (dragAccum != Vector2.zero)

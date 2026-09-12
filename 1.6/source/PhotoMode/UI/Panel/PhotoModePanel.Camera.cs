@@ -35,6 +35,19 @@ namespace Photo_Mode
                     manager.SetZoom(zoomValue);
                 }
 
+                listing.Gap(4f);
+
+                Rect rollLabelRect = listing.GetRect(PlaceholderHeight);
+                Widgets.Label(rollLabelRect, "PhotoMode.Camera.Roll".Translate(camera.RollDegrees.ToString("0")));
+                TooltipHandler.TipRegion(rollLabelRect, "PhotoMode.Camera.Roll.Tooltip".Translate());
+
+                Rect rollSliderRect = listing.GetRect(PlaceholderHeight);
+                float rollValue = Widgets.HorizontalSlider(rollSliderRect, camera.RollDegrees, PhotoCameraController.MinRollDegrees, PhotoCameraController.MaxRollDegrees, roundTo: 1f);
+                if (!Mathf.Approximately(rollValue, camera.RollDegrees))
+                {
+                    manager.SetCameraRoll(rollValue);
+                }
+
                 Rect resetRect = listing.GetRect(PlaceholderHeight);
                 if (Widgets.ButtonText(resetRect, "PhotoMode.Camera.Reset".Translate()))
                 {

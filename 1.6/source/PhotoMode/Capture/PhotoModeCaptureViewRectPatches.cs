@@ -20,19 +20,30 @@ namespace Photo_Mode
                 return true;
             }
 
-            if (!PhotoModeManager.Current.CaptureService.TryGetCaptureAspect(out float aspect))
+            PhotoModeManager manager = PhotoModeManager.Current;
+            if (!manager.CaptureService.TryGetCaptureAspect(out float aspect))
             {
-                return true;
+                aspect = (float)UI.screenWidth / UI.screenHeight;
             }
+
+            float rollDegrees = manager.State.Camera.RollDegrees;
+            float rollRadians = rollDegrees * Mathf.Deg2Rad;
+            float cos = Mathf.Abs(Mathf.Cos(rollRadians));
+            float sin = Mathf.Abs(Mathf.Sin(rollRadians));
 
             Vector3 position = Find.Camera.transform.position;
             float rootSize = __instance.RootSize;
+            float halfWidth = rootSize * aspect;
+            float halfHeight = rootSize;
+
+            float rolledHalfX = cos * halfWidth + sin * halfHeight;
+            float rolledHalfZ = sin * halfWidth + cos * halfHeight;
 
             CellRect rect = default;
-            rect.minX = Mathf.FloorToInt(position.x - rootSize * aspect - 1f);
-            rect.maxX = Mathf.CeilToInt(position.x + rootSize * aspect);
-            rect.minZ = Mathf.FloorToInt(position.z - rootSize - 1f);
-            rect.maxZ = Mathf.CeilToInt(position.z + rootSize);
+            rect.minX = Mathf.FloorToInt(position.x - rolledHalfX - 1f);
+            rect.maxX = Mathf.CeilToInt(position.x + rolledHalfX);
+            rect.minZ = Mathf.FloorToInt(position.z - rolledHalfZ - 1f);
+            rect.maxZ = Mathf.CeilToInt(position.z + rolledHalfZ);
 
             __result = rect;
             return false;

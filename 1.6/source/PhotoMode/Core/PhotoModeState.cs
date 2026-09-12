@@ -46,6 +46,7 @@ namespace Photo_Mode
     {
         public Vector3 Position;
         public float Zoom;
+        public float RollDegrees;
         public float MovementSpeed = 1f;
         public bool SmoothMovement = true;
         public bool ShowCompositionGuides;
@@ -54,6 +55,7 @@ namespace Photo_Mode
         {
             Position = Vector3.zero;
             Zoom = 0f;
+            RollDegrees = 0f;
             MovementSpeed = 1f;
             SmoothMovement = true;
             ShowCompositionGuides = false;

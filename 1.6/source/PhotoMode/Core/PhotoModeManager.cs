@@ -28,6 +28,8 @@ namespace Photo_Mode
 
         public PhotoModePanel Panel { get; private set; }
 
+        public CameraSession CameraSession => cameraSession;
+
         public PhotoModeTransition Transition { get; private set; } = PhotoModeTransition.None;
         public bool IsTransitioning => Transition != PhotoModeTransition.None;
 
@@ -208,23 +210,37 @@ namespace Photo_Mode
         public void Reset()
         {
             ClosePanelIfOpen();
-            RestoreBlueprintPreview();
-            CaptureService.CancelIfActive("Reset");
-            RenderScope.ForceCloseIfActive();
-            PhotoPostProcess.Detach();
-            weatherOverlayParticipant.ClearMaterialCache();
-            State.Reset();
+            try
+            {
+                RestoreBlueprintPreview();
+                CaptureService.CancelIfActive("Reset");
+                RenderScope.ForceCloseIfActive();
+                PhotoPostProcess.Detach();
+                weatherOverlayParticipant.ClearMaterialCache();
+                cameraSession.Restore();
+            }
+            finally
+            {
+                State.Reset();
+            }
         }
 
         public void Dispose()
         {
             ClosePanelIfOpen();
-            RestoreBlueprintPreview();
-            CaptureService.CancelIfActive("Dispose");
-            RenderScope.ForceCloseIfActive();
-            PhotoPostProcess.Detach();
-            weatherOverlayParticipant.ClearMaterialCache();
-            State.Reset();
+            try
+            {
+                RestoreBlueprintPreview();
+                CaptureService.CancelIfActive("Dispose");
+                RenderScope.ForceCloseIfActive();
+                PhotoPostProcess.Detach();
+                weatherOverlayParticipant.ClearMaterialCache();
+                cameraSession.Restore();
+            }
+            finally
+            {
+                State.Reset();
+            }
         }
 
         private void RestoreBlueprintPreview()
@@ -303,6 +319,18 @@ namespace Photo_Mode
             }
 
             CameraController.SetZoom(value);
+        }
+
+        public void SetCameraRoll(float degrees)
+        {
+            if (!State.Active)
+            {
+                return;
+            }
+
+            float clamped = PhotoCameraController.ClampRoll(degrees);
+            State.Camera.RollDegrees = clamped;
+            cameraSession.ApplyRoll(clamped);
         }
 
         public void SetVisualTimeHours(float hours)
