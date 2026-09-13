@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -7,43 +6,46 @@ namespace Photo_Mode
 {
     public static class PhotoPawnSelector
     {
-        public static void HandleMapClicks(Map map, List<Pawn> selected)
+        private const float HitRadius = 0.5f;
+
+        public static Pawn TryFindPawnAtPhotoDrawPosition(Map map, Dictionary<Pawn, PawnPhotoOverride> overrides, Vector3 worldPos)
         {
-            if (Event.current.type != EventType.MouseDown || Event.current.button != 0)
+            if (map == null)
             {
-                return;
+                return null;
             }
 
-            if (Find.WindowStack.GetWindowAt(UI.MousePositionOnUIInverted) != null)
+            float radiusSq = HitRadius * HitRadius;
+
+            Pawn best = null;
+            float bestDistSq = float.MaxValue;
+
+            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
+            for (int i = 0; i < pawns.Count; i++)
             {
-                return;
-            }
-
-            Event.current.Use();
-
-            Pawn clicked = PawnUnderMouse(map);
-            bool additive = RimWorld.Selector.ShiftIsHeld;
-
-            if (clicked == null)
-            {
-                if (!additive)
+                Pawn pawn = pawns[i];
+                if (!IsValid(pawn) || pawn.Map != map)
                 {
-                    selected.Clear();
+                    continue;
                 }
-                return;
-            }
 
-            if (additive)
-            {
-                if (!selected.Remove(clicked))
+                Vector3 drawPos = pawn.DrawPos;
+                if (overrides.TryGetValue(pawn, out PawnPhotoOverride photoOverride))
                 {
-                    selected.Add(clicked);
+                    drawPos += photoOverride.Offset;
                 }
-                return;
+
+                Vector3 delta = drawPos - worldPos;
+                delta.y = 0f;
+                float distSq = delta.sqrMagnitude;
+                if (distSq <= radiusSq && distSq < bestDistSq)
+                {
+                    best = pawn;
+                    bestDistSq = distSq;
+                }
             }
 
-            selected.Clear();
-            selected.Add(clicked);
+            return best;
         }
 
         public static void SelectNext(Map map, List<Pawn> selected)
@@ -128,40 +130,6 @@ namespace Photo_Mode
             List<Pawn> pawns = new List<Pawn>(map.mapPawns.AllPawnsSpawned);
             pawns.Sort((a, b) => a.thingIDNumber.CompareTo(b.thingIDNumber));
             return pawns;
-        }
-
-        public static bool IsPawnUnderMouse(Map map)
-        {
-            return PawnUnderMouse(map) != null;
-        }
-
-        private static Pawn PawnUnderMouse(Map map)
-        {
-            TargetingParameters targetingParameters = new TargetingParameters
-            {
-                canTargetPawns = true,
-                canTargetBuildings = false,
-                canTargetItems = false,
-                canTargetPlants = false,
-                canTargetAnimals = true,
-                canTargetHumans = true,
-                canTargetMechs = true,
-                canTargetSubhumans = true,
-                canTargetEntities = true,
-                mustBeSelectable = false,
-                mapObjectTargetsMustBeAutoAttackable = false
-            };
-
-            List<Thing> things = GenUI.ThingsUnderMouse(UI.MouseMapPosition(), 1f, targetingParameters);
-            for (int i = 0; i < things.Count; i++)
-            {
-                if (things[i] is Pawn pawn && pawn.Map == map && pawn.Spawned)
-                {
-                    return pawn;
-                }
-            }
-
-            return null;
         }
     }
 }

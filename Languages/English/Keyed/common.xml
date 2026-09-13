@@ -52,7 +52,7 @@
     <PhotoMode.Scene.Weather.Status.PartiallySupported>Partial particle support (some effects sky-only)</PhotoMode.Scene.Weather.Status.PartiallySupported>
     <PhotoMode.Scene.Weather.Status.Unsupported>Unsupported effect (sky only)</PhotoMode.Scene.Weather.Status.Unsupported>
     <PhotoMode.Section.Pawns>Pawns</PhotoMode.Section.Pawns>
-    <PhotoMode.Pawns.ClickHint>Click a pawn on the map to select it. Shift-click to multi-select.</PhotoMode.Pawns.ClickHint>
+    <PhotoMode.Pawns.ClickHint>Click a pawn on the map to select it, or click and drag to move it. Shift-click to multi-select.</PhotoMode.Pawns.ClickHint>
     <PhotoMode.Pawns.Previous>Previous</PhotoMode.Pawns.Previous>
     <PhotoMode.Pawns.Next>Next</PhotoMode.Pawns.Next>
     <PhotoMode.Pawns.NoneSelected>No pawns selected.</PhotoMode.Pawns.NoneSelected>
@@ -77,7 +77,8 @@
     <PhotoMode.Section.SceneDressing>Scene Dressing</PhotoMode.Section.SceneDressing>
     <PhotoMode.SceneDressing.Hint>Paint extra visual-only pawns, props, and atmosphere into this photo. Nothing here is ever saved or affects the game.</PhotoMode.SceneDressing.Hint>
     <PhotoMode.SceneDressing.BrushActive>Enable brush</PhotoMode.SceneDressing.BrushActive>
-    <PhotoMode.SceneDressing.BrushActiveHint>Click the map to paint or erase. Clicking a pawn still selects it.</PhotoMode.SceneDressing.BrushActiveHint>
+    <PhotoMode.SceneDressing.BrushActiveHint>While enabled, click and drag the map to paint or erase. Disable it to drag painted elements individually. Real pawns can always be clicked and dragged first.</PhotoMode.SceneDressing.BrushActiveHint>
+    <PhotoMode.SceneDressing.Selected>Selected: {0}</PhotoMode.SceneDressing.Selected>
     <PhotoMode.SceneDressing.Mode.Pawns>Pawns</PhotoMode.SceneDressing.Mode.Pawns>
     <PhotoMode.SceneDressing.Mode.Props>Props</PhotoMode.SceneDressing.Mode.Props>
     <PhotoMode.SceneDressing.Mode.Atmosphere>Atmosphere</PhotoMode.SceneDressing.Mode.Atmosphere>

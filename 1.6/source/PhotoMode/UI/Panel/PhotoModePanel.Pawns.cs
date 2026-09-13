@@ -199,12 +199,11 @@ namespace Photo_Mode
                 currentOffset = photoOverride.Offset;
             }
 
-            float max = PhotoModeManager.MaxPawnOffsetPerAxis;
+            Rect offsetXRect = listing.GetRect(PlaceholderHeight);
+            Widgets.Label(offsetXRect, "PhotoMode.Pawns.OffsetX".Translate(currentOffset.x.ToString("0.00")));
 
-            DrawGradeControl(listing, "PhotoMode.Pawns.OffsetX", -max, max, 0f, () => currentOffset.x,
-                v => manager.SetSelectedPawnsOffset(new Vector3(v, 0f, currentOffset.z)));
-            DrawGradeControl(listing, "PhotoMode.Pawns.OffsetZ", -max, max, 0f, () => currentOffset.z,
-                v => manager.SetSelectedPawnsOffset(new Vector3(currentOffset.x, 0f, v)));
+            Rect offsetZRect = listing.GetRect(PlaceholderHeight);
+            Widgets.Label(offsetZRect, "PhotoMode.Pawns.OffsetZ".Translate(currentOffset.z.ToString("0.00")));
 
             listing.Gap(4f);
 

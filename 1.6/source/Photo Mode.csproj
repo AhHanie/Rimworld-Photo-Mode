@@ -113,6 +113,7 @@
     <Compile Include="PhotoMode\Pawns\PhotoPawnPoseSupport.cs" />
     <Compile Include="PhotoMode\Pawns\PhotoPawnSelector.cs" />
     <Compile Include="PhotoMode\Presets\PhotoPresetData.cs" />
+    <Compile Include="PhotoMode\Scene\PhotoMapInteractionController.cs" />
     <Compile Include="PhotoMode\Scene\PhotoModeManager.SceneDressing.cs" />
     <Compile Include="PhotoMode\Scene\PhotoModeSceneRenderPatches.cs" />
     <Compile Include="PhotoMode\Scene\PhotoSceneCapabilityRegistry.cs" />

@@ -9,6 +9,7 @@ namespace Photo_Mode
         public const int MaxElements = 250;
         public const int MaxPawnClones = 64;
         public const int MaxUndoDepth = 30;
+        public const int InvalidElementId = 0;
 
         public const float MinBrushRadius = 0f;
         public const float MaxBrushRadius = 6f;
@@ -44,12 +45,23 @@ namespace Photo_Mode
 
         public string CapWarningKey;
 
+        public int SelectedElementId = InvalidElementId;
+
         private int nextElementId = 1;
+
+        private enum SceneEditKind
+        {
+            AddRemove,
+            Move
+        }
 
         private class SceneEditCommand
         {
+            public SceneEditKind Kind;
             public List<PhotoSceneElement> Added;
             public List<PhotoSceneElement> Removed;
+            public PhotoSceneElement MovedElement;
+            public Vector3 PreviousPosition;
         }
 
         private readonly List<SceneEditCommand> undoStack = new List<SceneEditCommand>();
@@ -57,6 +69,32 @@ namespace Photo_Mode
         public int AllocateId()
         {
             return nextElementId++;
+        }
+
+        public PhotoSceneElement GetElementById(int id)
+        {
+            if (id == InvalidElementId)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < Elements.Count; i++)
+            {
+                if (Elements[i].Id == id)
+                {
+                    return Elements[i];
+                }
+            }
+
+            return null;
+        }
+
+        public void ValidateSelection()
+        {
+            if (SelectedElementId != InvalidElementId && GetElementById(SelectedElementId) == null)
+            {
+                SelectedElementId = InvalidElementId;
+            }
         }
 
         public int PawnCloneCount
@@ -85,7 +123,21 @@ namespace Photo_Mode
                 return;
             }
 
-            undoStack.Add(new SceneEditCommand { Added = added, Removed = removed });
+            undoStack.Add(new SceneEditCommand { Kind = SceneEditKind.AddRemove, Added = added, Removed = removed });
+            if (undoStack.Count > MaxUndoDepth)
+            {
+                undoStack.RemoveAt(0);
+            }
+        }
+
+        public void PushMoveUndo(PhotoSceneElement element, Vector3 previousPosition)
+        {
+            if (element == null || element.Position == previousPosition)
+            {
+                return;
+            }
+
+            undoStack.Add(new SceneEditCommand { Kind = SceneEditKind.Move, MovedElement = element, PreviousPosition = previousPosition });
             if (undoStack.Count > MaxUndoDepth)
             {
                 undoStack.RemoveAt(0);
@@ -102,6 +154,13 @@ namespace Photo_Mode
             SceneEditCommand command = undoStack[undoStack.Count - 1];
             undoStack.RemoveAt(undoStack.Count - 1);
 
+            if (command.Kind == SceneEditKind.Move)
+            {
+                command.MovedElement.Position = command.PreviousPosition;
+                ValidateSelection();
+                return;
+            }
+
             if (command.Added != null)
             {
                 for (int i = 0; i < command.Added.Count; i++)
@@ -114,6 +173,8 @@ namespace Photo_Mode
             {
                 Elements.AddRange(command.Removed);
             }
+
+            ValidateSelection();
         }
 
         public void ClearAll()
@@ -125,6 +186,7 @@ namespace Photo_Mode
 
             List<PhotoSceneElement> removed = new List<PhotoSceneElement>(Elements);
             Elements.Clear();
+            SelectedElementId = InvalidElementId;
             PushUndo(null, removed);
         }
 
@@ -133,6 +195,7 @@ namespace Photo_Mode
             Elements.Clear();
             undoStack.Clear();
             nextElementId = 1;
+            SelectedElementId = InvalidElementId;
 
             Mode = PhotoSceneMode.Pawns;
             Tool = PhotoSceneTool.Paint;

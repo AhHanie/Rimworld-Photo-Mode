@@ -21,6 +21,7 @@ namespace Photo_Mode
         public readonly RenderOverrideScope RenderScope = new RenderOverrideScope();
         public readonly PhotoCameraController CameraController = new PhotoCameraController();
         public readonly PhotoCaptureService CaptureService = new PhotoCaptureService();
+        public readonly PhotoMapInteractionController MapInteraction = new PhotoMapInteractionController();
 
         private readonly CameraSession cameraSession = new CameraSession();
         private readonly PhotoTimeOfDayRenderParticipant timeOfDayParticipant = new PhotoTimeOfDayRenderParticipant();
@@ -197,7 +198,7 @@ namespace Photo_Mode
                 RenderScope.ForceCloseIfActive();
                 PhotoPostProcess.Detach();
                 weatherOverlayParticipant.ClearMaterialCache();
-                PhotoScenePainter.ResetDragState();
+                MapInteraction.ResetInputState();
                 cameraSession.Restore();
             }
             finally
@@ -218,7 +219,7 @@ namespace Photo_Mode
                 RenderScope.ForceCloseIfActive();
                 PhotoPostProcess.Detach();
                 weatherOverlayParticipant.ClearMaterialCache();
-                PhotoScenePainter.ResetDragState();
+                MapInteraction.ResetInputState();
                 cameraSession.Restore();
             }
             finally
@@ -237,7 +238,7 @@ namespace Photo_Mode
                 RenderScope.ForceCloseIfActive();
                 PhotoPostProcess.Detach();
                 weatherOverlayParticipant.ClearMaterialCache();
-                PhotoScenePainter.ResetDragState();
+                MapInteraction.ResetInputState();
                 cameraSession.Restore();
             }
             finally
@@ -497,8 +498,6 @@ namespace Photo_Mode
             State.SelectedPawns.Remove(pawn);
         }
 
-        public const float MaxPawnOffsetPerAxis = 2f;
-
         public void SetSelectedPawnsFacing(Rot4 facing)
         {
             if (!State.Active)
@@ -513,22 +512,18 @@ namespace Photo_Mode
             }
         }
 
-        public void SetSelectedPawnsOffset(Vector3 offset)
+        public void SetPawnOffset(Pawn pawn, Vector3 offset)
         {
-            if (!State.Active)
+            if (!State.Active || pawn == null || !State.SelectedPawns.Contains(pawn))
             {
                 return;
             }
 
-            offset.x = Mathf.Clamp(offset.x, -MaxPawnOffsetPerAxis, MaxPawnOffsetPerAxis);
             offset.y = 0f;
-            offset.z = Mathf.Clamp(offset.z, -MaxPawnOffsetPerAxis, MaxPawnOffsetPerAxis);
 
-            List<Pawn> selected = State.SelectedPawns;
-            for (int i = 0; i < selected.Count; i++)
-            {
-                GetOrCreateOverride(selected[i]).Offset = offset;
-            }
+            PawnPhotoOverride photoOverride = GetOrCreateOverride(pawn);
+            photoOverride.Offset = offset;
+            RemoveOverrideIfDefault(pawn, photoOverride);
         }
 
         public void ResetSelectedPawnPositions()

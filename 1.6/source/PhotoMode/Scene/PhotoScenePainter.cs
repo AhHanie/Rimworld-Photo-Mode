@@ -8,50 +8,32 @@ namespace Photo_Mode
     {
         private const float MinDragSpacing = 0.75f;
 
-        private static bool dragging;
         private static Vector3 lastPaintPos;
 
-        public static void HandleMapClicks(PhotoModeManager manager)
+        public static void BeginStroke(PhotoModeManager manager, Map map, Vector3 worldPos)
         {
-            Map map = manager.State.TargetMap;
-            if (map == null)
+            ApplyToolAt(manager, map, worldPos);
+            lastPaintPos = worldPos;
+        }
+
+        public static void ContinueStroke(PhotoModeManager manager, Map map, Vector3 worldPos)
+        {
+            if ((worldPos - lastPaintPos).sqrMagnitude < MinDragSpacing * MinDragSpacing)
             {
                 return;
             }
 
-            if (Find.WindowStack.GetWindowAt(UI.MousePositionOnUIInverted) != null)
-            {
-                return;
-            }
+            ApplyToolAt(manager, map, worldPos);
+            lastPaintPos = worldPos;
+        }
 
-            EventType type = Event.current.type;
+        public static void EndStroke()
+        {
+        }
 
-            if (type == EventType.MouseDown && Event.current.button == 0)
-            {
-                Event.current.Use();
-                Vector3 worldPos = UI.MouseMapPosition();
-                ApplyToolAt(manager, map, worldPos);
-                dragging = true;
-                lastPaintPos = worldPos;
-                return;
-            }
-
-            if (type == EventType.MouseDrag && Event.current.button == 0 && dragging)
-            {
-                Vector3 worldPos = UI.MouseMapPosition();
-                if ((worldPos - lastPaintPos).sqrMagnitude >= MinDragSpacing * MinDragSpacing)
-                {
-                    Event.current.Use();
-                    ApplyToolAt(manager, map, worldPos);
-                    lastPaintPos = worldPos;
-                }
-                return;
-            }
-
-            if (type == EventType.MouseUp && Event.current.button == 0)
-            {
-                dragging = false;
-            }
+        public static void ResetInputState()
+        {
+            lastPaintPos = Vector3.zero;
         }
 
         private static void ApplyToolAt(PhotoModeManager manager, Map map, Vector3 worldPos)
@@ -286,12 +268,8 @@ namespace Photo_Mode
             if (removed != null)
             {
                 scene.PushUndo(null, removed);
+                scene.ValidateSelection();
             }
-        }
-
-        public static void ResetDragState()
-        {
-            dragging = false;
         }
     }
 }

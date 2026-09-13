@@ -12,11 +12,8 @@ namespace Photo_Mode
                 return;
             }
 
+            MapInteraction.ResetInputState();
             State.SceneDressingToolActive = active;
-            if (!active)
-            {
-                PhotoScenePainter.ResetDragState();
-            }
         }
 
         public void SetSceneMode(PhotoSceneMode mode)
@@ -170,6 +167,66 @@ namespace Photo_Mode
             State.SceneDressing.FireScale = UnityEngine.Mathf.Clamp(scale, PhotoSceneState.MinFireScale, PhotoSceneState.MaxFireScale);
         }
 
+        public void SelectSceneElement(int elementId)
+        {
+            if (!State.Active)
+            {
+                return;
+            }
+
+            State.SceneDressing.SelectedElementId = elementId;
+        }
+
+        public void ClearSelectedSceneElement()
+        {
+            if (!State.Active)
+            {
+                return;
+            }
+
+            State.SceneDressing.SelectedElementId = PhotoSceneState.InvalidElementId;
+        }
+
+        public void SetSceneElementPosition(int elementId, UnityEngine.Vector3 position)
+        {
+            if (!State.Active)
+            {
+                return;
+            }
+
+            PhotoSceneElement element = State.SceneDressing.GetElementById(elementId);
+            if (element == null)
+            {
+                return;
+            }
+
+            Map map = State.TargetMap;
+            if (map != null)
+            {
+                position.x = UnityEngine.Mathf.Clamp(position.x, 0f, map.Size.x - 0.01f);
+                position.z = UnityEngine.Mathf.Clamp(position.z, 0f, map.Size.z - 0.01f);
+            }
+
+            position.y = 0f;
+            element.Position = position;
+        }
+
+        public void CommitSceneElementMove(int elementId, UnityEngine.Vector3 previousPosition)
+        {
+            if (!State.Active)
+            {
+                return;
+            }
+
+            PhotoSceneElement element = State.SceneDressing.GetElementById(elementId);
+            if (element == null)
+            {
+                return;
+            }
+
+            State.SceneDressing.PushMoveUndo(element, previousPosition);
+        }
+
         public void UndoSceneEdit()
         {
             if (!State.Active)
@@ -216,6 +273,8 @@ namespace Photo_Mode
                     }
                 }
             }
+
+            State.SceneDressing.ValidateSelection();
         }
     }
 }

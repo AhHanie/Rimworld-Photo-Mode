@@ -79,6 +79,14 @@ namespace Photo_Mode
                 listing.Label("PhotoMode.SceneDressing.Count".Translate(scene.Elements.Count, PhotoSceneState.MaxElements));
                 GUI.color = Color.white;
 
+                PhotoSceneElement selectedElement = scene.GetElementById(scene.SelectedElementId);
+                if (selectedElement != null)
+                {
+                    GUI.color = Color.gray;
+                    listing.Label("PhotoMode.SceneDressing.Selected".Translate(DescribeElement(selectedElement)));
+                    GUI.color = Color.white;
+                }
+
                 listing.Gap(2f);
 
                 Rect actionsRect = listing.GetRect(PlaceholderHeight);
@@ -107,6 +115,23 @@ namespace Photo_Mode
             }
 
             listing.Gap(4f);
+        }
+
+        private static string DescribeElement(PhotoSceneElement element)
+        {
+            switch (element)
+            {
+                case PhotoPawnElement pawnElement:
+                    return pawnElement.Source != null ? pawnElement.Source.LabelCap.ToString() : "PhotoMode.SceneDressing.Mode.Pawns".Translate().ToString();
+                case PhotoPropElement propElement:
+                    return propElement.Def != null ? propElement.Def.LabelCap.ToString() : "PhotoMode.SceneDressing.Mode.Props".Translate().ToString();
+                case PhotoDecalElement decalElement:
+                    return decalElement.Kind.ToString();
+                case PhotoFireElement _:
+                    return "PhotoMode.SceneDressing.Atmosphere.Fire".Translate().ToString();
+                default:
+                    return element.Id.ToString();
+            }
         }
 
         private void DrawModeTabs(Listing_Standard listing, PhotoSceneState scene)

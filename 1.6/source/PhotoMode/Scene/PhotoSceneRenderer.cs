@@ -9,8 +9,8 @@ namespace Photo_Mode
     {
         internal static bool IsRenderingSceneProxy;
 
-        private const float ClusterPositionVariance = 0.45f;
-        private const float ClusterSizeVariance = 0.2f;
+        internal const float ClusterPositionVariance = 0.45f;
+        internal const float ClusterSizeVariance = 0.2f;
         private const int ClusterScatterCount = 3;
         private const int FireTicksPerFrame = 15;
 
@@ -239,9 +239,7 @@ namespace Photo_Mode
                 return;
             }
 
-            float userScale = Mathf.Clamp(element.Scale, PhotoSceneState.MinFireScale, PhotoSceneState.MaxFireScale);
-            float vanillaDefaultFireSizeFactor = Mathf.Min(1f / 1.2f, 1.2f);
-            float scale = vanillaDefaultFireSizeFactor * userScale;
+            float scale = ComputeFireVisualScale(element.Scale);
 
             Vector3 pos = element.Position;
             pos.y = AltitudeLayer.PawnState.AltitudeFor();
@@ -252,7 +250,14 @@ namespace Photo_Mode
             Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0);
         }
 
-        private static ThingDef GetDecalDef(PhotoDecalKind kind)
+        internal static float ComputeFireVisualScale(float userScale)
+        {
+            float clamped = Mathf.Clamp(userScale, PhotoSceneState.MinFireScale, PhotoSceneState.MaxFireScale);
+            float vanillaDefaultFireSizeFactor = Mathf.Min(1f / 1.2f, 1.2f);
+            return vanillaDefaultFireSizeFactor * clamped;
+        }
+
+        internal static ThingDef GetDecalDef(PhotoDecalKind kind)
         {
             if (decalDefCache.TryGetValue(kind, out ThingDef cached))
             {

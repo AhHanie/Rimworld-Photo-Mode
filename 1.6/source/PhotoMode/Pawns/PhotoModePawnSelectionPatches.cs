@@ -1,6 +1,5 @@
 using HarmonyLib;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace Photo_Mode
@@ -27,20 +26,7 @@ namespace Photo_Mode
             }
 
             PhotoModeManager manager = PhotoModeManager.Current;
-            Map map = manager.State.TargetMap;
-
-            bool clickingRealPawn = Event.current.type == EventType.MouseDown
-                && Event.current.button == 0
-                && PhotoPawnSelector.IsPawnUnderMouse(map);
-
-            if (manager.State.SceneDressingToolActive && !clickingRealPawn)
-            {
-                PhotoScenePainter.HandleMapClicks(manager);
-            }
-            else
-            {
-                PhotoPawnSelector.HandleMapClicks(map, manager.State.SelectedPawns);
-            }
+            manager.MapInteraction.HandleInput(manager);
             return false;
         }
     }
